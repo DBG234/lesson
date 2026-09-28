@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>HOME PAGE</h1>
+
+    {% for image in images %}
+        <article>
+            {% if image.image %}
+                <img src="{{ image.image.url }}" alt="Practice image" style="max-width: 400px;">
+            {% endif %}
+        </article>
+        <hr>
+    {% empty %}
+        <p>No images have been added yet.</p>
+    {% endfor %}
+</body>
+</html>
